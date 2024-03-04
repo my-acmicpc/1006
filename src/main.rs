@@ -150,18 +150,18 @@ fn main() {
     for _ in 0..test_case_count {
         let mut line = String::new();
         io::stdin().read_line(&mut line).unwrap();
-        let mut iter = line.trim().split(' ').flat_map(|x| x.parse::<u16>());
+        let mut iter = line.trim().split(' ').flat_map(&str::parse::<u16>);
         iter.next();
         let population = iter.next().unwrap();
         let mut line = String::new();
         io::stdin().read_line(&mut line).unwrap();
-        let line1 = line.trim().split(' ').flat_map(|x| x.parse::<u16>());
+        let line1 = line.trim().split(' ').flat_map(&str::parse::<u16>);
         let mut line = String::new();
         io::stdin().read_line(&mut line).unwrap();
         let input = line
             .trim()
             .split(' ')
-            .flat_map(|x| x.parse::<u16>())
+            .flat_map(&str::parse::<u16>)
             .zip(line1)
             .collect::<Vec<_>>();
 
